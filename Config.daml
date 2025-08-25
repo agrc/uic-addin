@@ -1,20 +1,19 @@
-<ArcGIS defaultAssembly="uic-addin.dll" defaultNamespace="uic_addin" xmlns="http://schemas.esri.com/DADF/Registry"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
-  <AddInInfo id="{428cf60b-128f-46c6-bf06-dc663015d455}" version="2.0.0-beta.11" desktopVersion="2.2.12813">
+<?xml version="1.0" encoding="utf-8"?>
+<ArcGIS defaultAssembly="uic-addin.dll" defaultNamespace="uic_addin" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{428cf60b-128f-46c6-bf06-dc663015d455}" version="3.0.0-beta.1" desktopVersion="3.3">
     <Name>UIC Workflow</Name>
     <Description>An ArcGIS Pro add-in to help manage, create, and validate the UIC GIS database</Description>
     <Image>Images\AddinDesktop32.png</Image>
-    <Author>AGRC</Author>
-    <Company>AGRC</Company>
-    <Date>7/9/2018 3:55:00 PM, 2018</Date>
+    <Author>UGRC</Author>
+    <Company>UGRC</Company>
+    <Date>7/9/2025 3:55:00 PM, 2018</Date>
     <Subject>Editing</Subject>
   </AddInInfo>
   <modules>
     <insertModule id="UICModule" className="UicModule" autoLoad="true" caption="UIC Module">
       <tabs>
         <tab id="UICTab" keytip="UIC Tools" caption="UIC Tools">
-          <group refID="UICValidationGroup"/>
+          <group refID="UICValidationGroup" />
           <group refID="UICToolGroup" />
           <group refID="UICCreationGroup" />
           <group refID="UICHelp" />
@@ -37,130 +36,77 @@
           <button refID="esri_editing_SaveEditsBtn" size="large" />
           <button refID="esri_editing_DiscardEditsBtn" size="large" />
         </group>
-        <group id="UICHelp" caption ="Help" keytip="uh" appearsOnAddInTab="false">
+        <group id="UICHelp" caption="Help" keytip="uh" appearsOnAddInTab="false">
           <button refID="UpdateAvailableButton" size="large" />
           <button refID="PropertiesButton" size="large" />
           <customControl refID="FeedbackControl" size="large" />
         </group>
       </groups>
       <controls>
-        <button id="UpdateAvailableButton" caption="Updates" keytip="uu" className="uic_addin.Controls.UpdateButton"
-                loadOnClick="true" smallImage="Images\UIC16.png" largeImage="Images\UIC32.png"
-                condition="has_updates">
-        </button>
-        <button id="PropertiesButton" caption="Settings" keytip="us" className="uic_addin.Controls.PropertiesButton"
-                loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericProperties16.png"
-                largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericProperties32.png">
+        <button id="UpdateAvailableButton" caption="Updates" keytip="uu" className="uic_addin.Controls.UpdateButton" loadOnClick="true" smallImage="Images\UIC16.png" largeImage="Images\UIC32.png" condition="has_updates"></button>
+        <button id="PropertiesButton" caption="Settings" keytip="us" className="uic_addin.Controls.PropertiesButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericProperties16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericProperties32.png">
           <tooltip heading="Pro Add-in Evergreen">
-            Stay Current!<disabledText/>
-          </tooltip>
+            Stay Current!<disabledText /></tooltip>
         </button>
-        <button id="NaicsFinderPaneOpenButton" caption="Find NAICS code" keytip="un"
-                className="uic_addin.Controls.NaicsFinderPaneOpenButton" loadOnClick="true"
-                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Filter16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Filter32.png">
+        <button id="NaicsFinderPaneOpenButton" caption="Find NAICS code" keytip="un" className="uic_addin.Controls.NaicsFinderPaneOpenButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Filter16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Filter32.png">
           <tooltip heading="NAICS Code Finder">
-            Use this tool to narrow down NAICS codes by their descriptions<disabledText/>
-          </tooltip>
+            Use this tool to narrow down NAICS codes by their descriptions<disabledText /></tooltip>
         </button>
-        <button id="Well_Missing_WellOperatingStatus" caption="no operating status records" keytip="uw"
-                className="uic_addin.Controls.WellOperatingStatus" loadOnClick="true"
-                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException32.png"
-                condition="esri_mapping_mapPane">
+        <button id="Well_Missing_WellOperatingStatus" caption="no operating status records" keytip="uw" className="uic_addin.Controls.WellOperatingStatus" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException32.png" condition="esri_mapping_mapPane">
           <tooltip heading="Well Validations">
-            Find wells without an operating status record<disabledText>Activate the UIC mapping pane to enable this tool</disabledText>
-          </tooltip>
+            Find wells without an operating status record<disabledText>Activate the UIC mapping pane to enable this tool</disabledText></tooltip>
         </button>
-        <button id="Well_Missing_Authorization" caption="no authorization" keytip="uw"
-                className="uic_addin.Controls.Authorization" loadOnClick="true"
-                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException32.png"
-                condition="esri_mapping_mapPane">
+        <button id="Well_Missing_Authorization" caption="no authorization" keytip="uw" className="uic_addin.Controls.Authorization" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException32.png" condition="esri_mapping_mapPane">
           <tooltip heading="Well Validations">
-            Find wells without an authorization<disabledText>Activate the UIC mapping pane to enable this tool</disabledText>
-          </tooltip>
+            Find wells without an authorization<disabledText>Activate the UIC mapping pane to enable this tool</disabledText></tooltip>
         </button>
-        <button id="Well_Missing_AoR" caption="no area of review" keytip="uw"
-                className="uic_addin.Controls.AreaOfReview" loadOnClick="true"
-                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException32.png"
-                condition="esri_mapping_mapPane">
+        <button id="Well_Missing_AoR" caption="no area of review" keytip="uw" className="uic_addin.Controls.AreaOfReview" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException32.png" condition="esri_mapping_mapPane">
           <tooltip heading="Well Validations">
-            Find wells without an Area of Review record where AuthorizationType is IP or AP<disabledText>Activate the UIC mapping pane to enable this tool</disabledText>
-          </tooltip>
+            Find wells without an Area of Review record where AuthorizationType is IP or AP<disabledText>Activate the UIC mapping pane to enable this tool</disabledText></tooltip>
         </button>
-        <button id="Authorization_Missing_Action" caption="no authorization action" keytip="ua"
-                className="uic_addin.Controls.AuthorizationAction" loadOnClick="true"
-                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException32.png"
-                condition="esri_mapping_mapPane">
+        <button id="Authorization_Missing_Action" caption="no authorization action" keytip="ua" className="uic_addin.Controls.AuthorizationAction" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException32.png" condition="esri_mapping_mapPane">
           <tooltip heading="Authorization Validations">
-            Find authorizations without an authorization action<disabledText>Activate the UIC mapping pane to enable this tool</disabledText>
-          </tooltip>
+            Find authorizations without an authorization action<disabledText>Activate the UIC mapping pane to enable this tool</disabledText></tooltip>
         </button>
-        <button id="Authorization_Missing_Facility" caption="no related facility" keytip="ua"
-                className="uic_addin.Controls.AuthorizationMissingFacilityFk" loadOnClick="true"
-                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException32.png"
-                condition="esri_mapping_mapPane">
+        <button id="Authorization_Missing_Facility" caption="no related facility" keytip="ua" className="uic_addin.Controls.AuthorizationMissingFacilityFk" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException32.png" condition="esri_mapping_mapPane">
           <tooltip heading="Authorization Validations">
-            Find authorizations without a facility<disabledText>Activate the UIC mapping pane to enable this tool</disabledText>
-          </tooltip>
+            Find authorizations without a facility<disabledText>Activate the UIC mapping pane to enable this tool</disabledText></tooltip>
         </button>
-        <button id="AoR_Missing_Authorization" caption="no authorization" keytip="ua"
-                className="uic_addin.Controls.AorAuthorization" loadOnClick="true"
-                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException32.png"
-                condition="esri_mapping_mapPane">
+        <button id="AoR_Missing_Authorization" caption="no authorization" keytip="ua" className="uic_addin.Controls.AorAuthorization" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException32.png" condition="esri_mapping_mapPane">
           <tooltip heading="Authorization Validations">
-            Find area of review records without an authorization record<disabledText>Activate the UIC mapping pane to enable this tool</disabledText>
-          </tooltip>
+            Find area of review records without an authorization record<disabledText>Activate the UIC mapping pane to enable this tool</disabledText></tooltip>
         </button>
-        <button id="AoR_Missing_ArtPen" caption="no artificial penetration" keytip="ua"
-                className="uic_addin.Controls.AorArtPen" loadOnClick="true"
-                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException32.png"
-                condition="esri_mapping_mapPane">
+        <button id="AoR_Missing_ArtPen" caption="no artificial penetration" keytip="ua" className="uic_addin.Controls.AorArtPen" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException32.png" condition="esri_mapping_mapPane">
           <tooltip heading="AOR Validations">
-            Find area of review records without an artificial penetration<disabledText>Activate the UIC mapping pane to enable this tool</disabledText>
-          </tooltip>
+            Find area of review records without an artificial penetration<disabledText>Activate the UIC mapping pane to enable this tool</disabledText></tooltip>
         </button>
-        <button id="Enforcement_Date" caption="enforcement date pre dates violation date" loadOnClick="true"
-                className="uic_addin.Controls.EnforcementDate"
-                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException32.png"
-                condition="esri_mapping_mapPane">
+        <button id="Enforcement_Date" caption="enforcement date pre dates violation date" loadOnClick="true" className="uic_addin.Controls.EnforcementDate" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException32.png" condition="esri_mapping_mapPane">
           <tooltip heading="Enforcement Violations">
             Find enforcements where the enforcement date is earlier than the violation date
-            <disabledText>Activate the UIC mapping pane to enable this tool</disabledText>
-          </tooltip>
+            <disabledText>Activate the UIC mapping pane to enable this tool</disabledText></tooltip>
         </button>
         <button id="Inspection_Correction" caption="everything but no deficiency requires correction" loadOnClick="true" className="uic_addin.Controls.InspectionCorrection" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException32.png" condition="esri_mapping_mapPane">
           <tooltip heading="Inspection Violations">
             Find Inspections without a `No Deficiency` type that are missing a correction record
-            <disabledText>Activate the UIC mapping pane to enable this tool</disabledText>
-          </tooltip>
+            <disabledText>Activate the UIC mapping pane to enable this tool</disabledText></tooltip>
         </button>
-        <button id="Violation_Compliance" caption="missing return to compliance date" loadOnClick="true"
-                className="uic_addin.Controls.ViolationCompliance" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException32.png" condition="esri_mapping_mapPane">
+        <button id="Violation_Compliance" caption="missing return to compliance date" loadOnClick="true" className="uic_addin.Controls.ViolationCompliance" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/ErrorException32.png" condition="esri_mapping_mapPane">
           <tooltip heading="Violation Violations">
             Find Violations without a `ReturnToComplianceDate`
-            <disabledText>Activate the UIC mapping pane to enable this tool</disabledText>
-          </tooltip>
+            <disabledText>Activate the UIC mapping pane to enable this tool</disabledText></tooltip>
         </button>
-        <button id="CreateAoRButton" caption="Area of review" keytip="ua"
-                className="uic_addin.Controls.AoRButton" loadOnClick="true"
-                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EditingBuffer16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EditingBuffer32.png"
-                condition="has_map_and_implementation">
+        <button id="CreateAoRButton" caption="Area of review" keytip="ua" className="uic_addin.Controls.AoRButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EditingBuffer16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EditingBuffer32.png" condition="has_map_and_implementation">
           <tooltip heading="Area of Review tools">
-            Create area of review polygon<disabledText>Activate the UIC mapping pane to enable this tool</disabledText>
-          </tooltip>
+            Create area of review polygon<disabledText>Activate the UIC mapping pane to enable this tool</disabledText></tooltip>
         </button>
-        <customControl isDropDown="true" id="FeedbackControl" caption="Provide Feedback" keytip="uf"
-                className="uic_addin.Controls.FeedbackControlViewModel" loadOnClick="true"
-                smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Emailuser16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EmailUser32.png">
+        <customControl isDropDown="true" id="FeedbackControl" caption="Provide Feedback" keytip="uf" className="uic_addin.Controls.FeedbackControlViewModel" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Emailuser16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/EmailUser32.png">
           <content className="uic_addin.Controls.FeedbackControlView" />
           <tooltip heading="Send Feedback">
-            Send Feedback<disabledText/>
-          </tooltip>
+            Send Feedback<disabledText /></tooltip>
         </customControl>
       </controls>
       <panes>
-        <pane id="NaicsFinderPane" caption="NAICS Finder" className="uic_addin.Views.NaicsFinderPaneViewModel"
-              smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Filter16.png" defaultTab="esri_mapping_homeTab"
-              defaultTool="esri_mapping_navigateTool">
+        <pane id="NaicsFinderPane" caption="NAICS Finder" className="uic_addin.Views.NaicsFinderPaneViewModel" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/Filter16.png" defaultTab="esri_mapping_homeTab" defaultTool="esri_mapping_navigateTool">
           <content className="uic_addin.Views.NaicsFinderPaneView" />
         </pane>
       </panes>
@@ -193,15 +139,14 @@
   </modules>
   <propertySheets>
     <updateSheet refID="esri_core_optionsPropertySheet">
-      <insertPage id="EvergreenSettings" caption="UIC Add-in" className="uic_addin.Views.EvergreenSettingsViewModel"
-                  group="Project">
+      <insertPage id="EvergreenSettings" caption="UIC Add-in" className="uic_addin.Views.EvergreenSettingsViewModel" group="Project">
         <content className="uic_addin.Views.EvergreenSettingsView" />
       </insertPage>
     </updateSheet>
   </propertySheets>
   <conditions>
     <insertCondition id="has_implementation" caption="should this feature work yet?">
-      <state id="has_implemented"/>
+      <state id="has_implemented" />
     </insertCondition>
     <insertCondition id="has_updates" caption="is there an update available?">
       <state id="has_update" />

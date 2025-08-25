@@ -103,9 +103,9 @@ internal class InspectionCorrection : Button {
 
         Log.Verbose("Setting selection");
 
-                MapView.Active.Map.SetSelection(new Dictionary<MapMember, List<long>> {
-                    { LayerService.GetStandaloneTable(tableName, MapView.Active.Map), problems }
-                });
+        _ = MapView.Active.Map.SetSelection(SelectionSet.FromDictionary(new Dictionary<MapMember, List<long>> {
+                { LayerService.GetStandaloneTable(tableName, MapView.Active.Map), problems }
+            }));
 
         progressor.Value = 100;
 

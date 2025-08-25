@@ -339,9 +339,9 @@ internal class AreaOfReview : Button {
 
         progressor.Value = 95;
 
-            MapView.Active.Map.SetSelection(new Dictionary<MapMember, List<long>> {
-                { layer, noAreaOfReview.ToList() }
-            });
+        _ = MapView.Active.Map.SetSelection(SelectionSet.FromDictionary(new Dictionary<MapMember, List<long>> {
+            { layer, noAreaOfReview.ToList() }
+        }));
 
         progressor.Value = 100;
 

@@ -1,302 +1,155 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{428CF60B-128F-46C6-BF06-DC663015D455}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <NoWarn>CA1416</NoWarn>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
     <RootNamespace>uic_addin</RootNamespace>
-    <AssemblyName>uic-addin</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <StartAction>Program</StartAction>
-    <StartProgram>C:\Program Files\ArcGIS\Pro\bin\ArcGISPro.exe</StartProgram>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <StartAction>Program</StartAction>
-    <StartProgram>C:\Program Files\ArcGIS\Pro\bin\ArcGISPro.exe</StartProgram>
-    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ArcGIS.Core">
-      <HintPath>packages\Esri.ArcGISPro.Extensions.2.4.0.19948\ref\net461\ArcGIS.Core.dll</HintPath>
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGIS.Core.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
       <Private>False</Private>
     </Reference>
     <Reference Include="ArcGIS.Desktop.Catalog">
-      <HintPath>packages\Esri.ArcGISPro.Extensions.2.4.0.19948\ref\net461\ArcGIS.Desktop.Catalog.dll</HintPath>
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\Catalog\ArcGIS.Desktop.Catalog.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
       <Private>False</Private>
     </Reference>
     <Reference Include="ArcGIS.Desktop.Core">
-      <HintPath>packages\Esri.ArcGISPro.Extensions.2.4.0.19948\ref\net461\ArcGIS.Desktop.Core.dll</HintPath>
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\Core\ArcGIS.Desktop.Core.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
       <Private>False</Private>
     </Reference>
     <Reference Include="ArcGIS.Desktop.DataGrid.Contrib.Wpf">
-      <HintPath>packages\Esri.ArcGISPro.Extensions.2.4.0.19948\ref\net461\ArcGIS.Desktop.DataGrid.Contrib.Wpf.dll</HintPath>
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGIS.Desktop.DataGrid.Contrib.Wpf.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
       <Private>False</Private>
     </Reference>
     <Reference Include="ArcGIS.Desktop.DataReviewer">
-      <HintPath>packages\Esri.ArcGISPro.Extensions.2.4.0.19948\ref\net461\ArcGIS.Desktop.DataReviewer.dll</HintPath>
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\DataReviewer\ArcGIS.Desktop.DataReviewer.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
       <Private>False</Private>
     </Reference>
     <Reference Include="ArcGIS.Desktop.Editing">
-      <HintPath>packages\Esri.ArcGISPro.Extensions.2.4.0.19948\ref\net461\ArcGIS.Desktop.Editing.dll</HintPath>
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\Editing\ArcGIS.Desktop.Editing.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
       <Private>False</Private>
     </Reference>
     <Reference Include="ArcGIS.Desktop.Editors.Wpf">
-      <HintPath>packages\Esri.ArcGISPro.Extensions.2.4.0.19948\ref\net461\ArcGIS.Desktop.Editors.Wpf.dll</HintPath>
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGIS.Desktop.Editors.Wpf.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
       <Private>False</Private>
     </Reference>
     <Reference Include="ArcGIS.Desktop.Extensions">
-      <HintPath>packages\Esri.ArcGISPro.Extensions.2.4.0.19948\ref\net461\ArcGIS.Desktop.Extensions.dll</HintPath>
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\DesktopExtensions\ArcGIS.Desktop.Extensions.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
       <Private>False</Private>
     </Reference>
     <Reference Include="ArcGIS.Desktop.Framework">
-      <HintPath>packages\Esri.ArcGISPro.Extensions.2.4.0.19948\ref\net461\ArcGIS.Desktop.Framework.dll</HintPath>
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGIS.Desktop.Framework.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
       <Private>False</Private>
     </Reference>
     <Reference Include="ArcGIS.Desktop.GeoProcessing">
-      <HintPath>packages\Esri.ArcGISPro.Extensions.2.4.0.19948\ref\net461\ArcGIS.Desktop.GeoProcessing.dll</HintPath>
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\Geoprocessing\ArcGIS.Desktop.GeoProcessing.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
       <Private>False</Private>
     </Reference>
     <Reference Include="ArcGIS.Desktop.Layouts">
-      <HintPath>packages\Esri.ArcGISPro.Extensions.2.4.0.19948\ref\net461\ArcGIS.Desktop.Layouts.dll</HintPath>
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\Layout\ArcGIS.Desktop.Layouts.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
       <Private>False</Private>
     </Reference>
     <Reference Include="ArcGIS.Desktop.Mapping">
-      <HintPath>packages\Esri.ArcGISPro.Extensions.2.4.0.19948\ref\net461\ArcGIS.Desktop.Mapping.dll</HintPath>
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\Mapping\ArcGIS.Desktop.Mapping.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
       <Private>False</Private>
     </Reference>
     <Reference Include="ArcGIS.Desktop.Ribbon.Wpf">
-      <HintPath>packages\Esri.ArcGISPro.Extensions.2.4.0.19948\ref\net461\ArcGIS.Desktop.Ribbon.Wpf.dll</HintPath>
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGIS.Desktop.Ribbon.Wpf.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
       <Private>False</Private>
     </Reference>
     <Reference Include="ArcGIS.Desktop.Shared.Wpf">
-      <HintPath>packages\Esri.ArcGISPro.Extensions.2.4.0.19948\ref\net461\ArcGIS.Desktop.Shared.Wpf.dll</HintPath>
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\ArcGIS.Desktop.Shared.Wpf.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
       <Private>False</Private>
     </Reference>
     <Reference Include="ArcGIS.Desktop.TaskAssistant">
-      <HintPath>packages\Esri.ArcGISPro.Extensions.2.4.0.19948\ref\net461\ArcGIS.Desktop.TaskAssistant.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="ArcGIS.Desktop.Workflow">
-      <HintPath>packages\Esri.ArcGISPro.Extensions.2.4.0.19948\ref\net461\ArcGIS.Desktop.Workflow.dll</HintPath>
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\Extensions\TaskAssistant\ArcGIS.Desktop.TaskAssistant.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
       <Private>False</Private>
     </Reference>
     <Reference Include="ESRI.ArcGIS.ItemIndex">
-      <HintPath>packages\Esri.ArcGISPro.Extensions.2.4.0.19948\ref\net461\ESRI.ArcGIS.ItemIndex.dll</HintPath>
+      <HintPath>C:\Program Files\ArcGIS\Pro\bin\ESRI.ArcGIS.ItemIndex.dll</HintPath>
+      <CopyLocal>True</CopyLocal>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
-      <HintPath>packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Build.Framework" />
-    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Xaml.Behaviors.Wpf.1.0.1\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
-    </Reference>
-    <Reference Include="Octokit, Version=0.34.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Octokit.0.34.0\lib\net45\Octokit.dll</HintPath>
-    </Reference>
-    <Reference Include="ProEvergreen, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\ProEvergreen.2.0.2\lib\net461\ProEvergreen.exe</HintPath>
-    </Reference>
-    <Reference Include="ReactiveProperty, Version=5.5.0.0, Culture=neutral, PublicKeyToken=910d1732782c71cb, processorArchitecture=MSIL">
-      <HintPath>packages\ReactiveProperty.6.1.2\lib\net461\ReactiveProperty.dll</HintPath>
-    </Reference>
-    <Reference Include="ReactiveProperty.NET46, Version=5.5.0.0, Culture=neutral, PublicKeyToken=3d1fed915120cbde, processorArchitecture=MSIL">
-      <HintPath>packages\ReactiveProperty.6.1.2\lib\net461\ReactiveProperty.NET46.dll</HintPath>
-    </Reference>
-    <Reference Include="Semver, Version=2.0.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Semver.2.0.4\lib\net452\Semver.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
-      <HintPath>packages\Serilog.2.8.0\lib\net46\Serilog.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog.Sinks.Email, Version=2.3.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
-      <HintPath>packages\Serilog.Sinks.Email.2.3.0\lib\net45\Serilog.Sinks.Email.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog.Sinks.File, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
-      <HintPath>packages\Serilog.Sinks.File.3.2.0\lib\net45\Serilog.Sinks.File.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog.Sinks.PeriodicBatching, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
-      <HintPath>packages\Serilog.Sinks.PeriodicBatching.2.2.0\lib\net45\Serilog.Sinks.PeriodicBatching.dll</HintPath>
-    </Reference>
-    <Reference Include="Serilog.Sinks.RollingFile, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
-      <HintPath>packages\Serilog.Sinks.RollingFile.3.3.0\lib\net45\Serilog.Sinks.RollingFile.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.ComponentModel.Annotations.4.6.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ComponentModel.Composition" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.IO.Compression, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
-    <Reference Include="System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="System.Reactive, Version=4.1.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
-      <HintPath>packages\System.Reactive.4.1.6\lib\net46\System.Reactive.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.3\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Windows" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-    <Reference Include="WindowsBase" />
-    <Reference Include="System.Xaml" />
   </ItemGroup>
   <ItemGroup>
-    <AddInContent Include="Config.daml" />
-    <AddInContent Include="Images\AddInDesktop16.png" />
-    <AddInContent Include="Images\AddInDesktop32.png" />
-    <AddInContent Include="DarkImages\AddInDesktop16.png" />
-    <AddInContent Include="DarkImages\AddInDesktop32.png" />
+    <Content Include="Config.daml" />
+    <Content Include="Images\AddInDesktop16.png" />
+    <Content Include="Images\AddInDesktop32.png" />
+    <Content Include="DarkImages\AddInDesktop16.png" />
+    <Content Include="DarkImages\AddInDesktop32.png" />
+    <Content Include="DarkImages\UIC16.png" />
+    <Content Include="DarkImages\UIC32.png" />
+    <Content Include="Images\UIC16.png" />
+    <Content Include="Images\UIC32.png" />
+    <Content Include="DarkImages\GenericButtonPurple16.png" />
+    <Content Include="DarkImages\GenericButtonPurple32.png" />
+    <Content Include="DarkImages\GenericButtonGreen16.png" />
+    <Content Include="DarkImages\GenericButtonGreen32.png" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\AorValidations.cs" />
-    <Compile Include="Controls\AuthorizationValidations.cs" />
-    <Compile Include="Controls\EnforcementValidations.cs" />
-    <Compile Include="Controls\FeedbackControl.xaml.cs">
-      <DependentUpon>FeedbackControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\FeedbackControlViewModel.cs" />
-    <Compile Include="Controls\InspectionValidations.cs" />
-    <Compile Include="Controls\PropertiesButton.cs" />
-    <Compile Include="Controls\UpdateButton.cs" />
-    <Compile Include="Controls\ViolationValidations.cs" />
-    <Compile Include="Controls\WellValidations.cs" />
-    <Compile Include="Converters\StringNullOrEmptyToVisibilityConverter.cs" />
-    <Compile Include="Extensions\StringExtensions.cs" />
-    <Compile Include="Models\EvergreenSettings.cs" />
-    <Compile Include="Models\NaicsModel.cs" />
-    <Compile Include="Services\LayerService.cs" />
-    <Compile Include="Services\NotificationService.cs" />
-    <Compile Include="Services\QueryService.cs" />
-    <Compile Include="Services\ThreadService.cs" />
-    <Compile Include="ViewModels\PropertyChangedWithValidation.cs" />
-    <Compile Include="Views\EvergreenSettings.xaml.cs">
-      <DependentUpon>EvergreenSettings.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EvergreenSettingsViewModel.cs" />
-    <Compile Include="Views\NaicsFinderPane.xaml.cs">
-      <DependentUpon>NaicsFinderPane.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\NaicsFinderPaneOpenButton.cs" />
-    <Compile Include="Views\NaicsFinderPaneViewModel.cs" />
-    <Compile Include="UicModule.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="Controls\FeedbackControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\EvergreenSettings.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\NaicsFinderPane.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <AddInContent Include="DarkImages\UIC16.png" />
-    <AddInContent Include="DarkImages\UIC32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AddInContent Include="Images\UIC16.png" />
-    <AddInContent Include="Images\UIC32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include=".gitignore" />
-    <AddInContent Include="DarkImages\GenericButtonPurple16.png" />
-    <AddInContent Include="DarkImages\GenericButtonPurple32.png" />
-    <AddInContent Include="DarkImages\GenericButtonGreen16.png" />
-    <AddInContent Include="DarkImages\GenericButtonGreen32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include=".editorconfig" />
-    <None Include="app.config" />
-    <None Include="CHANGELOG.md" />
-    <None Include="LICENSE" />
     <Content Include="NaicsDocuments\2017_NAICS_Index_File.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="NaicsDocuments\2_6_digit_2017_Codes.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="omnisharp.json" />
-    <None Include="package.json" />
-    <None Include="packages.config" />
-    <None Include="README.md" />
   </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!--
-  PackageAction can be:
-  BuildDefault: ArcGIS Pro is required. An esriAddinX package is created and copied to ArcGIS Pro add-in folder.
-  BuildZipPostProcess: ArcGIS Pro install is NOT required to build the add-in.  An esriAddinX package is created in your output folder.
-  BuildNoPostProcess:  ArcGIS Pro install is NOT required to build the add-in.  An esriAddinX package is NOT created.
-  -->
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PackageAction>BuildDefault</PackageAction>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PackageAction>BuildDefault</PackageAction>
-  </PropertyGroup>
-  <UsingTask AssemblyFile="C:\Program Files\ArcGIS\Pro\bin\proapp-sdk-MSBuild.dll" TaskName="proapp_sdk_MSBuild.PackageAddIn" />
-  <UsingTask AssemblyFile="C:\Program Files\ArcGIS\Pro\bin\proapp-sdk-MSBuild.dll" TaskName="proapp_sdk_MSBuild.CleanAddIn" />
-  <UsingTask AssemblyFile="C:\Program Files\ArcGIS\Pro\bin\proapp-sdk-MSBuild.dll" TaskName="proapp_sdk_MSBuild.ConvertToRelativePath" />
-  <Import Project="C:\Program Files\ArcGIS\Pro\bin\Esri.ProApp.SDK.Desktop.targets" Condition="Exists('C:\Program Files\ArcGIS\Pro\bin\Esri.ProApp.SDK.Desktop.targets')" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
-  <Target Name="BeforeBuild">
-    <Error Text="C:\Program Files\ArcGIS\Pro\bin\Esri.ProApp.SDK.Desktop.targets not found." Condition="!Exists('C:\Program Files\ArcGIS\Pro\bin\Esri.ProApp.SDK.Desktop.targets')" />
-  </Target>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('packages\Esri.ArcGISPro.Extensions.2.4.0.19948\build\net461\Esri.ArcGISPro.Extensions.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Esri.ArcGISPro.Extensions.2.4.0.19948\build\net461\Esri.ArcGISPro.Extensions.targets'))" />
-  </Target>
-  <Import Project="packages\Esri.ArcGISPro.Extensions.2.4.0.19948\build\net461\Esri.ArcGISPro.Extensions.targets" Condition="Exists('packages\Esri.ArcGISPro.Extensions.2.4.0.19948\build\net461\Esri.ArcGISPro.Extensions.targets')" />
+  <ItemGroup>
+    <PackageReference Include="BouncyCastle.Cryptography" Version="2.6.2" />
+    <PackageReference Include="ExcelDataReader" Version="3.7.0" />
+    <PackageReference Include="IndexRange" Version="1.1.0" />
+    <PackageReference Include="Microsoft.Bcl.HashCode" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Primitives" Version="9.0.8" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
+    <PackageReference Include="MimeKit" Version="4.13.0" />
+    <PackageReference Include="Octokit" Version="14.0.0" />
+    <PackageReference Include="ReactiveProperty" Version="9.7.0" />
+    <PackageReference Include="ReactiveProperty.Core" Version="9.7.0" />
+    <PackageReference Include="Semver" Version="3.0.0" />
+    <PackageReference Include="Serilog" Version="4.3.0" />
+    <PackageReference Include="Serilog.Sinks.Email" Version="4.1.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
+    <PackageReference Include="System.Buffers" Version="4.6.1" />
+    <PackageReference Include="System.Collections" Version="4.3.0" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="9.0.8" />
+    <PackageReference Include="System.Formats.Asn1" Version="9.0.8" />
+    <PackageReference Include="System.Memory" Version="4.6.3" />
+    <PackageReference Include="System.Numerics.Vectors" Version="4.6.1" />
+    <PackageReference Include="System.ObjectModel" Version="4.3.0" />
+    <PackageReference Include="System.Reactive" Version="6.0.1" />
+    <PackageReference Include="System.Reflection" Version="4.3.0" />
+    <PackageReference Include="System.Reflection.Extensions" Version="4.3.0" />
+    <PackageReference Include="System.Runtime" Version="4.3.1" />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.1.2" />
+    <PackageReference Include="System.Threading.Channels" Version="9.0.8" />
+    <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.6.3" />
+    <PackageReference Include="System.ValueTuple" Version="4.6.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\pro-evergreen\ProEvergreen\ProEvergreen.csproj" />
+  </ItemGroup>
+  <Import Project="C:\Program Files\ArcGIS\Pro\bin\Esri.ProApp.SDK.Desktop.targets" Condition="Exists('C:\Program Files\ArcGIS\Pro\bin\Esri.ProApp.SDK.Desktop.targets') AND !Exists('Esri.ArcGISPro.Extensions.targets')" />
 </Project>

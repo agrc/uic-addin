@@ -96,9 +96,9 @@ namespace uic_addin.Controls {
 
             progressor.Value = 90;
 
-            MapView.Active.Map.SetSelection(new Dictionary<MapMember, List<long>> {
+            _ = MapView.Active.Map.SetSelection(SelectionSet.FromDictionary(new Dictionary<MapMember, List<long>> {
                 { parentLayer, problems }
-            });
+            }));
 
             progressor.Value = 100;
 

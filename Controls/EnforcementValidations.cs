@@ -126,9 +126,9 @@ internal class EnforcementDate : Button {
             return;
         }
 
-                    MapView.Active.Map.SetSelection(new Dictionary<MapMember, List<long>> {
-                        { mapMember, problems }
-                    });
+        _ = MapView.Active.Map.SetSelection(SelectionSet.FromDictionary(new Dictionary<MapMember, List<long>> {
+                    { mapMember, problems }
+                }));
 
         progressor.Value = 100;
 
