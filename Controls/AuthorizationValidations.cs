@@ -53,7 +53,7 @@ namespace uic_addin.Controls {
                 while (cursor.MoveNext()){
                     var fk = Convert.ToString(cursor.Current["AUTHORIZATION_FK"]);
 
-                    foreignKeys.Add(fk);
+                    _ = foreignKeys.Add(fk);
                 }
             }
 
@@ -65,7 +65,7 @@ namespace uic_addin.Controls {
                 while (cursor.MoveNext()) {
                     var fk = Convert.ToString(cursor.Current["GUID"]);
 
-                    primaryKeys.Add(fk);
+                    _ = primaryKeys.Add(fk);
                 }
             }
 
@@ -108,7 +108,7 @@ namespace uic_addin.Controls {
 
             Log.Verbose("Zooming to selected");
 
-            await MapView.Active.ZoomToSelectedAsync(TimeSpan.FromSeconds(1.5));
+            _ = await MapView.Active.ZoomToSelectedAsync(TimeSpan.FromSeconds(1.5));
 
             Log.Debug("Finished Authorization Validation");
         });
@@ -178,7 +178,7 @@ namespace uic_addin.Controls {
 
             Log.Verbose("Zooming to selected");
 
-            await MapView.Active.ZoomToSelectedAsync(TimeSpan.FromSeconds(1.5));
+            _ = await MapView.Active.ZoomToSelectedAsync(TimeSpan.FromSeconds(1.5));
 
             Log.Debug("finished authorization missing facility fk validation");
         });

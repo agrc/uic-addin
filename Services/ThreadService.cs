@@ -5,25 +5,24 @@ using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using Serilog;
 
-namespace uic_addin.Services {
-    public class ThreadService {
-        public static bool IsOnUiThread => FrameworkApplication.TestMode ||
-                                           Application.Current.Dispatcher.CheckAccess();
+namespace uic_addin.Services; 
+public class ThreadService {
+    public static bool IsOnUiThread => FrameworkApplication.TestMode ||
+                                       Application.Current.Dispatcher.CheckAccess();
 
-        public static void RunOnUiThread(Action action) {
-            try {
-                if (IsOnUiThread) {
-                    action();
-                } else {
-                    Application.Current.Dispatcher.Invoke(action);
-                }
-            } catch (Exception ex) {
-                Log.Error(ex, "error running on ui thread");
+    public static void RunOnUiThread(Action action) {
+        try {
+            if (IsOnUiThread) {
+                action();
+            } else {
+                Application.Current.Dispatcher.Invoke(action);
             }
+        } catch (Exception ex) {
+            Log.Error(ex, "error running on ui thread");
         }
-
-        public static Task RunOnBackground(Action action) => QueuedTask.Run(action);
-
-        public static Task<T> RunOnBackground<T>(Func<T> func) => QueuedTask.Run(func);
     }
+
+    public static Task RunOnBackground(Action action) => QueuedTask.Run(action);
+
+    public static Task<T> RunOnBackground<T>(Func<T> func) => QueuedTask.Run(func);
 }
