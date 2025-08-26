@@ -125,6 +125,7 @@
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
     <PackageReference Include="MimeKit" Version="4.13.0" />
     <PackageReference Include="Octokit" Version="14.0.0" />
+    <PackageReference Include="ProEvergreen" Version="3.0.0" />
     <PackageReference Include="ReactiveProperty" Version="9.7.0" />
     <PackageReference Include="ReactiveProperty.Core" Version="9.7.0" />
     <PackageReference Include="Semver" Version="3.0.0" />
@@ -147,9 +148,6 @@
     <PackageReference Include="System.Threading.Channels" Version="9.0.8" />
     <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.6.3" />
     <PackageReference Include="System.ValueTuple" Version="4.6.1" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\pro-evergreen\ProEvergreen\ProEvergreen.csproj" />
   </ItemGroup>
   <Import Project="C:\Program Files\ArcGIS\Pro\bin\Esri.ProApp.SDK.Desktop.targets" Condition="Exists('C:\Program Files\ArcGIS\Pro\bin\Esri.ProApp.SDK.Desktop.targets') AND !Exists('Esri.ArcGISPro.Extensions.targets')" />
 </Project>

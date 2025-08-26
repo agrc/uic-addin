@@ -116,12 +116,11 @@ internal class WellOperatingStatus : Button {
             using (var cursor = relatedTable.Search(filter, true)) {
                 var guidIndex = cursor.FindField("WELL_FK");
 
-                    while (cursor.MoveNext()) {
-                        var guid = cursor.Current[guidIndex].ToString();
-
-                        foreignKeys.Add(guid);
+                while (cursor.MoveNext()) {
+                    var fk = cursor.Current[guidIndex]?.ToString();
+                    if (!string.IsNullOrEmpty(fk)) {
+                        _ = foreignKeys.Add(fk);
                     }
-                        _ = foreignKeys.Add(guid);
                 }
             }
 

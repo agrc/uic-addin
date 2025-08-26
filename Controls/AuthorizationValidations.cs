@@ -8,6 +8,7 @@ using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Core.Data;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 
 namespace uic_addin.Controls {
     internal class AuthorizationAction : Button {
@@ -49,11 +50,14 @@ namespace uic_addin.Controls {
 
             using (var cursor = layer.Search(new QueryFilter {
                 SubFields = "Authorization_FK"
-            })) {
-                while (cursor.MoveNext()){
-                    var fk = Convert.ToString(cursor.Current["AUTHORIZATION_FK"]);
-
-                    _ = foreignKeys.Add(fk);
+            }))
+            {
+                var guidIndex = cursor.FindField("AUTHORIZATION_FK");
+                while (cursor.MoveNext()) {
+                    var fk = cursor.Current[guidIndex]?.ToString();
+                    if (!string.IsNullOrEmpty(fk)) {
+                        _ = foreignKeys.Add(fk);
+                    }
                 }
             }
 
@@ -62,10 +66,12 @@ namespace uic_addin.Controls {
             using (var cursor = parentLayer.Search(new QueryFilter{
                 SubFields = "GUID"
             })) {
+                var guidIndex = cursor.FindField("GUID");
                 while (cursor.MoveNext()) {
-                    var fk = Convert.ToString(cursor.Current["GUID"]);
-
-                    _ = primaryKeys.Add(fk);
+                    var fk = cursor.Current[guidIndex]?.ToString();
+                    if (!string.IsNullOrEmpty(fk)) {
+                        _ = primaryKeys.Add(fk);
+                    }
                 }
             }
 

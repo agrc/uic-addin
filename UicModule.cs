@@ -72,14 +72,12 @@ internal class UicModule : Module {
         var logLocation = Path.Combine(addinFolder, "{Date}-log.txt");
 
         // Try to read API key from environment variable or configuration
-        var apiKey = Environment.GetEnvironmentVariable("SENDGRID_API_KEY") ?? "your-api-key-here";
-
         Log.Logger = new LoggerConfiguration()
             .WriteTo.Email(options: new() {
                 From = "noreply@utah.gov",
                 To = ["ugrc-developers@utah.gov"],
-                Host = "smtp.sendrid.net",
-                Credentials = new NetworkCredential("apiKey", apiKey)
+                Host = "send.state.ut.us",
+                Port = 25
             },
              restrictedToMinimumLevel: LogEventLevel.Error)
             .WriteTo.File(logLocation, rollingInterval: RollingInterval.Day, retainedFileCountLimit: 7)

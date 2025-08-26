@@ -29,7 +29,7 @@ internal class FeedbackControlViewModel : CustomControl {
         var content = Feedback.Value;
         Feedback.Value = string.Empty;
 
-        const string to = "sgourley@utah.gov";
+        const string to = "ugrc-developers@utah.gov";
         const string from = "no-reply@utah.gov";
         const string subject = "UIC Add-in Feedback";
 
