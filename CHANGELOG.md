@@ -1,3 +1,13 @@
+# [3.0.0-beta.1](https://github.com/agrc/uic-addin/compare/2.0.0-beta.11...3.0.0-beta.1) (2025-08-26)
+
+
+### Features
+
+* migrate to dotnet 8 and target pro 3.3 ([22f9e68](https://github.com/agrc/uic-addin/commit/22f9e68916c6e932fa740b013b521afdd1132b51))
+* **violation:** violation no return to compliance validation ([4b634bf](https://github.com/agrc/uic-addin/commit/4b634bf9b37d6013ad39b609222615ac86e0c093)), closes [#33](https://github.com/agrc/uic-addin/issues/33)
+
+
+
 # [2.0.0-beta.11](https://github.com/uic-utah/uic-addin/compare/2.0.0-beta.10...2.0.0-beta.11) (2019-10-31)
 
 
