@@ -4,29 +4,6 @@ An ArcGIS Pro add-in to help manage, create, and validate the UIC GIS database
 
 ## Releasing
 
-### Automated Release Process
-
-1. **Prepare the release** by running the "Prepare Release" workflow:
-   - Go to [Actions](../../actions/workflows/prepare-release.yml)
-   - Click "Run workflow"
-   - Enter the version number (e.g., `3.0.0` or `3.0.0-beta.1`)
-   - Click "Run workflow"
-
-2. **Create the GitHub release**:
-   - The workflow will automatically update versions and create a tag
-   - Follow the instructions in the workflow output to create the release
-   - Use the suggested random release name (Adjective + Dog)
-   - Copy the latest changelog entries to the release description
-   - Mark as pre-release if using `-beta.x` suffix
-
-3. **Automatic deployment**:
-   - Once the release is published, the release workflow automatically builds and attaches the `.esriAddinX` file
-
-### Manual Release Process (Legacy)
-
-<details>
-<summary>Click to expand manual steps</summary>
-
 1. Bump `Config.daml` and `package.json` version
 1. Run `npm install && npm run changelog`
 1. Commit changes `chore(release): x.x.x`
@@ -38,8 +15,6 @@ An ArcGIS Pro add-in to help manage, create, and validate the UIC GIS database
 1. Run a release build
 1. Copy `/bin/Release/uic-addin.esriAddinX` to the release assets
 1. Mark as pre-release if using the `-beta.x`
-
-</details>
 
 ### Important References
 
