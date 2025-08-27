@@ -8,7 +8,6 @@ using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Core.Data;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 
 namespace uic_addin.Controls {
     internal class AuthorizationAction : Button {
