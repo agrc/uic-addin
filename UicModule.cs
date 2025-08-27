@@ -68,7 +68,7 @@ internal class UicModule : Module {
 
     private void SetupLogging() {
         var addinFolder = GetAddinFolder();
-        var logLocation = Path.Combine(addinFolder, "{Date}-log.txt");
+        var logLocation = Path.Combine(addinFolder, "uid-addin-log.txt");
 
         // Try to read API key from environment variable or configuration
         Log.Logger = new LoggerConfiguration()
