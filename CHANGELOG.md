@@ -1,3 +1,12 @@
+# [3.0.0-beta.2](https://github.com/agrc/uic-addin/compare/3.0.0-beta.1...3.0.0-beta.2) (2025-08-27)
+
+
+### Bug Fixes
+
+* replace package references with nuget ([cc13cc9](https://github.com/agrc/uic-addin/commit/cc13cc9b76044d32c7ded3492dd60185bd7e6d45))
+
+
+
 # [3.0.0-beta.1](https://github.com/agrc/uic-addin/compare/2.0.0-beta.11...3.0.0-beta.1) (2025-08-26)
 
 
